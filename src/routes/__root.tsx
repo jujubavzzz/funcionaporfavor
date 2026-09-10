@@ -20,12 +20,15 @@ function NotFoundComponent() {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
+
         <h2 className="mt-4 text-xl font-semibold text-foreground">
           Page not found
         </h2>
+
         <p className="mt-2 text-sm text-muted-foreground">
           The page you're looking for doesn't exist or has been moved.
         </p>
+
         <div className="mt-6">
           <Link
             to="/"
@@ -47,6 +50,7 @@ function ErrorComponent({
   reset: () => void;
 }) {
   console.error(error);
+
   const router = useRouter();
 
   useEffect(() => {
@@ -95,36 +99,48 @@ export const Route =
     head: () => ({
       meta: [
         { charSet: "utf-8" },
-        { name: "viewport", content: "width=device-width, initial-scale=1" },
+
+        {
+          name: "viewport",
+          content: "width=device-width, initial-scale=1",
+        },
+
         {
           title: "La Crème Bakery — Confeitaria artesanal",
         },
+
         {
           name: "description",
           content:
             "Confeitaria artesanal francesa: bolos, tortas, macarons e doces feitos à mão todos os dias.",
         },
+
         {
           name: "author",
           content: "La Crème Bakery",
         },
+
         {
           property: "og:title",
           content: "La Crème Bakery — Confeitaria artesanal",
         },
+
         {
           property: "og:description",
           content:
             "Doces clássicos feitos à mão, com receitas de família e ingredientes selecionados.",
         },
+
         {
           property: "og:type",
           content: "website",
         },
+
         {
           name: "twitter:card",
           content: "summary_large_image",
         },
+
         {
           name: "twitter:site",
           content: "@Lovable",
@@ -136,19 +152,28 @@ export const Route =
           rel: "stylesheet",
           href: appCss,
         },
+
         {
           rel: "preconnect",
           href: "https://fonts.googleapis.com",
         },
+
         {
           rel: "preconnect",
           href: "https://fonts.gstatic.com",
           crossOrigin: "anonymous",
         },
+
         {
           rel: "stylesheet",
           href:
             "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Karla:wght@300;400;500;600&display=swap",
+        },
+
+        {
+          rel: "icon",
+          href:
+            "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E",
         },
       ],
     }),
